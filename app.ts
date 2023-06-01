@@ -1,33 +1,13 @@
-/* const person: {
-  name: string;
-  age: number;
-} = { */
+let userInput: unknown;
+let userName: string;
 
-/* const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string]; // tuple
-} = {
-  name: 'David',
-  age: 47,
-  hobbies: ['Guitar', 'Pickleball', 'eCommerce'],
-  role: [3, 'baller'],
-}; */
+userInput = 5;
+userInput = 'Yo \'mama';
 
-enum Role { ADMIN, READ_ONLY, AUTHOR };
+// userName = userInput; // Error: Type 'unknown' is not assignable to type 'string'.
 
-const person = {
-  name: 'David',
-  age: 47,
-  hobbies: ['Guitar', 'Pickleball', 'eCommerce'],
-  role: Role.ADMIN,
-};
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-  console.log(hobby);
+function generateError(message: string, code: number): never { // never returns a value
+  throw {message: message, errorCode: code};
 }
 
-console.log(person.role);
+generateError('An error occurred!', 500);
