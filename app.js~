@@ -1,0 +1,9 @@
+var userInput;
+var userName;
+userInput = 5;
+userInput = 'Yo \'mama';
+// userName = userInput; // Error: Type 'unknown' is not assignable to type 'string'.
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
+}
+generateError('An error occurred!', 500);
